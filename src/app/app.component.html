@@ -1,15 +1,9 @@
-<header>
-  <h1>{{title}}</h1>
-  <p>Front end web app</p>
-</header>
+<app-header class='container cantainer-fluid'></app-header>
 
-<ul>
-  <li *ngFor="let item of shoppingList">{{item}}</li>
-</ul>
+<main class='container'>
+  <app-nav></app-nav>
 
-<div class="">
-  <label for="item">What do you want to add</label>
-  <input type="text"
-         #thingy>
-  <button (click)="addItem(thingy)"> Click to add!!!</button>
-</div>
+  <router-outlet></router-outlet>
+
+
+</main>

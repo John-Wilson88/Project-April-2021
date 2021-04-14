@@ -1,0 +1,35 @@
+<div class="form-group">
+  <label for="amount">Amount</label>
+  <input type="number"
+         #amount
+         (keyup)='updateBillAmount(amount)'
+         class="form-control">
+</div>
+
+<div class="btn-group"
+     role="group"
+     aria-label="Basic example">
+  <button type="button"
+          (click)="changeTipPercentage(.1)"
+          class="btn btn-primary"
+          [disabled]='tipPercentage === .1'>10%</button>
+  <button type="button"
+          (click)="changeTipPercentage(.15)"
+          class="btn btn-primary"
+          [disabled]='tipPercentage === .15'>15%</button>
+  <button type="button"
+          (click)="changeTipPercentage(.20)"
+          class="btn btn-primary"
+          [disabled]='tipPercentage === .2'>20%</button>
+  <button type="button"
+          (click)="changeTipPercentage(.25)"
+          class="btn btn-primary"
+          [disabled]='tipPercentage === .25'>25%</button>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item">Bill Amount: {{billAmount | currency}}</li>
+  <li class="list-group-item">Tip Percentage: {{tipPercentage | percent}}</li>
+  <li class="list-group-item">Tip Percentage: {{tipAmount | currency}}</li>
+  <li class="list-group-item">Total To Be Paid: {{totalToBePaid | currency}}</li>
+</ul>
